@@ -16,7 +16,7 @@ const Home = ({ data, setFilteredProducts, filteredProducts }) => {
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [noProductsMessage, setNoProductsMessage] = useState("");
   const [sortMethod, setSortMethod] = useState("default");
-  const [originalData, setOriginalData] = useState([]); // Добавляем состояние для хранения исходных данных
+  const [originalData, setOriginalData] = useState([]); 
   
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Home = ({ data, setFilteredProducts, filteredProducts }) => {
     );
     setDisplayedProducts(filteredData);
     if (filteredData.length === 0) {
-      setNoProductsMessage("Товаров с такими ценами нет");
+      setNoProductsMessage("Загрузка товаров...");
     } else {
       setNoProductsMessage("");
     }
@@ -46,7 +46,7 @@ const Home = ({ data, setFilteredProducts, filteredProducts }) => {
       sortedData.sort((a, b) => b.rating.rate - a.rating.rate);
       setDisplayedProducts(sortedData);
     } else if (sortMethod === "default") {
-      setDisplayedProducts(originalData); // Возвращаем исходные данные при выборе "Без сортировки"
+      setDisplayedProducts(originalData); 
     }
   }, [data, sortMethod, originalData]);
 
@@ -56,8 +56,8 @@ const Home = ({ data, setFilteredProducts, filteredProducts }) => {
   };
 
   useEffect(() => {
-    setOriginalData(data); // Сохраняем исходные данные при загрузке компонента
-    setDisplayedProducts(data); // Устанавливаем исходные данные как отображаемые при загрузке компонента
+    setOriginalData(data);
+    setDisplayedProducts(data);
   }, [data]);
 
   return (
