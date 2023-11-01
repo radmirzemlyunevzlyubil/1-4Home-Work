@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+
+body{
+  margin: 0;
+}
+
+:root {
+  font-family: "Raleway", sans-serif;
+  background: #f2f5f7;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0 0 0 468px;
+
+}
